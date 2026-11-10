@@ -823,7 +823,7 @@ loadVoices();
 if(window.speechSynthesis){try{speechSynthesis.onvoiceschanged=function(){loadVoices();if(!S&&UI.tab==='settings')render()}}catch(e){}}
 try{if(window.claude&&claude.use){claude.use('tts').then(function(t){ttsCap=t||null}).catch(function(){})}}catch(e){}
 /* Âm thanh: ưu tiên file mp3 đọc sẵn (có cho mọi từ và câu trong bài), giọng của thiết bị chỉ là dự phòng */
-var AP=null;
+var AP=null,AP_SEQ=0;
 function clean(t){return String(t).replace(/[…·]/g,'')}
 function audioURL(t){try{var k=AUDIO[clean(t).trim()];return k?'audio/'+k+'.mp3':null}catch(e){return null}}
 function hasVoice(){return true}
@@ -845,11 +845,16 @@ function speakP(text,slow){
       if(!AP){AP=new Audio();AP.preload='auto';AP.setAttribute('playsinline','')}
       try{if(window.speechSynthesis)speechSynthesis.cancel()}catch(e){}
       AP.pause();AP.onended=fin;
-      AP.onerror=function(){if(!deviceSpeak(text,slow,fin,est)){toast('Không phát được âm thanh. Kiểm tra kết nối mạng và âm lượng.');fin()}};
+      AP.onerror=function(){if(my!==AP_SEQ){fin();return}if(!deviceSpeak(text,slow,fin,est)){toast('Không phát được âm thanh. Kiểm tra kết nối mạng và âm lượng.');fin()}};
       AP.src=url;AP.defaultPlaybackRate=slow?0.7:1;AP.playbackRate=slow?0.7:1;
       try{AP.preservesPitch=true;AP.webkitPreservesPitch=true}catch(e){}
+      var my=++AP_SEQ;
       var p=AP.play();
-      if(p&&p.catch)p.catch(function(err){if(err&&err.name==='NotAllowedError'){fin();return}if(!deviceSpeak(text,slow,fin,est))fin()});
+      if(p&&p.catch)p.catch(function(err){
+        /* một lần bấm Nghe mới đã thay lần này: bỏ qua, không đọc bằng giọng thiết bị */
+        if(my!==AP_SEQ||(err&&err.name==='AbortError')){fin();return}
+        if(err&&err.name==='NotAllowedError'){toast('Chạm lại nút Nghe để phát âm thanh.');fin();return}
+        if(!deviceSpeak(text,slow,fin,est))fin()});
       setTimeout(fin,est+5000);return;
     }catch(e){}}
     if(!deviceSpeak(text,slow,fin,est)){toast('Thiết bị chưa phát được giọng tiếng Trung cho câu này.');setTimeout(fin,est)}
