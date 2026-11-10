@@ -149,10 +149,72 @@ details summary{cursor:pointer;font-weight:600;min-height:40px;display:flex;alig
 @media (prefers-reduced-motion:reduce){.sp0 .p0,.sp1 .p1{animation:none}}
 @media (prefers-reduced-motion:no-preference){.card,.btn{transition:background .15s,border-color .15s}}
 @media (max-width:380px){.hz{font-size:2rem}.sc{grid-template-columns:78px 1fr 40px}}
+
+/* ===== bản màu nổi bật hơn và trò chơi ===== */
+body{background:radial-gradient(1200px 400px at 50% -120px,#fde7d8 0%,rgba(253,231,216,0) 70%) top center/100% 480px no-repeat,var(--bg)}
+@media (prefers-color-scheme: dark){body{background:var(--bg)}}
+.brand{display:inline-flex;align-items:center;gap:8px;font-size:1.05rem}
+.seal{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#d94a38,#b02a22);color:#fff;font-family:var(--han);font-weight:700;font-size:1.05rem;box-shadow:0 2px 6px rgba(176,42,34,.35)}
+.card.hero{border:0;box-shadow:0 6px 22px rgba(13,122,104,.16);background:linear-gradient(180deg,#ffffff 0%,#f4fbf9 100%)}
+@media (prefers-color-scheme: dark){.card.hero{background:var(--surface)}}
+.btn{box-shadow:0 3px 0 rgba(0,0,0,.12)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.12)}
+.btn.sec,.btn.ghost,.btn.sm{box-shadow:none}
+.statbar{display:flex;gap:10px}
+.stat{flex:1;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:.88rem;color:var(--ink2)}
+.stat svg{width:26px;height:26px;flex:none}
+.stat b{font-size:1.3rem;color:var(--ink);display:block;line-height:1.1}
+.stat small{display:block;font-size:.76rem;line-height:1.2}
+.stat.xp svg{color:#e3a21a}
+.gamescard{background:linear-gradient(135deg,#fff8ef,#fff);border-color:#f3dcc4}
+@media (prefers-color-scheme: dark){.gamescard{background:var(--surface);border-color:var(--line)}}
+.gametiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gtile{border:0;border-radius:16px;padding:12px 8px 12px;color:#fff;font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;min-height:128px;box-shadow:0 4px 0 rgba(0,0,0,.15);transition:transform .12s}
+.gtile:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.15)}
+.gtile svg{width:52px;height:52px}
+.gtile b{font-size:.95rem;line-height:1.2}
+.gtile span{font-size:.72rem;opacity:.92}
+.g1{background:linear-gradient(160deg,#ef6a4c,#c2412d)} .g2{background:linear-gradient(160deg,#4d93d9,#1d5fa8)} .g3{background:linear-gradient(160deg,#9b6ad6,#6a3fb0)}
+.game .gtitle{font-weight:700;font-size:1.05rem}
+.chip.xp{display:inline-flex;align-items:center;gap:4px;background:#fff3d6;color:#8a5a00}
+.chip.xp svg{width:14px;height:14px;color:#e3a21a}
+.gintro{align-items:center;text-align:center;color:#fff;border:0;padding:26px 18px}
+.gintro svg{width:84px;height:84px}
+.gintro h2{font-size:1.5rem}
+.gintro .btn{background:#fff;color:#1d2b28;font-size:1.1rem}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mcard{aspect-ratio:3/4;border-radius:14px;border:2px solid var(--line);background:var(--surface);font:inherit;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px;text-align:center;box-shadow:0 3px 0 var(--line);transition:transform .15s,background .15s}
+.mcard .hz.s{font-size:1.5rem}
+.mcard .py{font-size:.8rem}
+.mcard .vi{font-size:.9rem;font-weight:600;line-height:1.25}
+.mcard.open{border-color:#3b82c4;background:#eaf3fc;transform:translateY(-3px)}
+.mcard.got{border-color:var(--ok);background:var(--ok-soft);opacity:.55;box-shadow:none}
+.mcard.wrong{border-color:var(--bad);background:var(--bad-soft);animation:shake .35s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.timer{height:8px;border-radius:4px;background:var(--surface2);overflow:hidden}
+.timer i{display:block;height:100%;background:linear-gradient(90deg,#f2b632,#e0453a);animation:tm 10s linear forwards;transform-origin:left}
+@keyframes tm{from{width:100%}to{width:0}}
+.listenbig{align-self:center;width:112px;height:112px;border-radius:50%;border:0;background:linear-gradient(160deg,#4d93d9,#1d5fa8);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:inherit;font-size:.8rem;cursor:pointer;box-shadow:0 5px 0 #154a85}
+.listenbig svg{width:44px;height:44px}
+.listenbig:active{transform:translateY(3px);box-shadow:0 2px 0 #154a85}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt .py.big{font-size:1.3rem;font-weight:600}
+.opt.ok{animation:pop .3s}
+@keyframes pop{50%{transform:scale(1.04)}}
+.fb{border-radius:12px;padding:12px 14px} .fb.good{background:var(--ok-soft)} .fb.bad{background:var(--bad-soft)}
+.endbox{align-items:center;text-align:center}
+.stars{display:flex;gap:6px}
+.stars .st svg{width:46px;height:46px;color:var(--line)}
+.stars .st.on svg{color:#f2b632;filter:drop-shadow(0 2px 2px rgba(0,0,0,.15))}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}
+.confetti i{position:absolute;top:-12px;width:9px;height:14px;border-radius:2px;animation:fall 2.2s ease-in forwards}
+@keyframes fall{to{top:105%;transform:rotate(540deg)}}
+@media (prefers-reduced-motion:reduce){.confetti{display:none}.timer i{animation-duration:10s}}
 </style>
 </head><body>
 <div id="app"></div>
 <script>
+var AUDIO={"你好":"7eca689f0d","谢谢":"a34490b593","再见":"8e5c0a1e46","不客气":"be672ad548","谢谢你！":"6edd74bfd3","再见，明天见！":"d2177982cc","你好！":"0342b5aff1","谢谢你。":"9c5cbf5a9a","不客气。再见！":"f4b727ec93","对不起":"cd51c8c91e","没关系":"ac85b3780c","请":"d1a34a5779","好的":"375ec8858f","对不起，我迟到了。":"c114b5656f","没关系，请坐。":"69dcf511d9","早上好":"48f75a24bc","晚安":"5b9bd653da","你好吗":"7c62edd327","我很好":"9ff5718cf6","你好吗？":"bb0b6bc453","我很好，你呢？":"7391618f22","是":"0a60ac8f02","不是":"046f5a050a","对":"00447bbe5e","不对":"3d8754efe1","对，是的。":"749849c361","这是水，不是茶。":"f82cef1eef","听不懂":"51e12cab55","再说一遍":"4415e0312d","什么意思":"00c4cf4698","明白了":"a036ceb45b","我听不懂。":"01ec2cf55c","请说慢一点。":"f89b50a489","名字":"689fad203a","叫":"27ead3ff93","认识":"dad2ab0807","高兴":"60b633faa9","你叫什么名字？":"dcdedf4368","我叫阿明，很高兴认识你。":"98ccd65a90","你好！你叫什么名字？":"3b1ce53e72","你好，我叫小红。你呢？":"7781f8ed17","我叫阿明。很高兴认识你。":"b5bb1a0634","我也很高兴认识你。":"d7f969dbc4","越南":"29eeb04d53","中国":"c13dceabcb","人":"465afe3c11","哪":"e0bcc1fa08","我是越南人。":"4469b0e37e","你是哪国人？":"c1a9246f49","工作":"9a018b21ab","工厂":"3e67b3dcfe","在":"241d47a3ee","做":"7105106a36","我在工厂工作。":"5dd94b977d","你做什么工作？":"a60a2342c8","一 二 三":"79d0e1f3e2","四 五 六":"d9977a7987","七 八 九":"6ccfca2ea0","十":"181245720b","一，二，三，开始！":"36ffbd25a7","五加五是十。":"410460dd1b","有":"cc4ad2fd27","个":"930882bb0a","两":"0bff8e5ca6","孩子":"03e25ab08d","你有几个孩子？":"097717613c","我有两个孩子。":"e31189aa6d","十一":"6863d827d8","二十":"39f55a21eb","一百":"61b0509932","岁":"2854fa1c12","你今年多大？":"5bc992f1e7","我今年三十岁。":"fd773c8182","爸爸":"0d00c80f61","妈妈":"e6c7ee6003","老婆":"d7b8eeacd9","老公":"222651b743","我爸爸在家。":"8c22053657","你家有几口人？":"1aef7c8693","现在":"505ccfb0e8","点":"be604f8b7e","半":"2475dea6e8","分":"daf783c8cd","现在几点？":"0ad267da55","现在七点半。":"2b7c441d7b","今天":"800dfdd902","明天":"8bcbd77d1f","上班":"b4f0388f1e","星期":"9e71cf606e","明天我八点上班。":"4a106558db","今天星期几？":"8edc304656","吃":"a52b77dfc6","喝":"57df27116d","想":"291837bd5b","饭":"094f7310ef","我想吃饭。":"e4520d30e2","你想喝什么？":"7b27b514a2","菜单":"4ccbdc5301","给":"37186b95f5","好吃":"a78e4f228b","买单":"554003c7ff","请给我菜单。":"49f1e4996d","这个很好吃！":"ca7232634c","多少钱":"57af3610b1","块":"7084eb1b15","这个":"76d3280175","要":"5438c873f9","这个多少钱？":"7ffc317d98","我要这个，二十块。":"c424256577","太贵了":"f48b8a61c4","便宜":"86194baed3","可以":"eaa9c5c2f1","不用了":"cfe05627c4","太贵了，便宜一点可以吗？":"5513a604ee","不用了，谢谢。":"b04fa167b4","起床":"59b19552d6","睡觉":"60cffce1f6","回家":"7b894d7a03","每天":"78623eaefc","我每天六点起床。":"a9f6ba4286","晚上十点我睡觉。":"b3cd7eef45","下班":"96ed60cdcb","休息":"3a991a4ca5","周末":"c17375d125","晚上":"a80cc5027a","我五点下班。":"81ef9101ef","周末我想休息。":"f88e868ec5","热":"2044c27397","冷":"74eaee9656","累":"af467b208f","渴":"922265b4ea","今天很热。":"419a15073a","我有点累。":"9a49ec5112","不舒服":"7668fd3cee","头疼":"ef4605f8e9","药":"60cb730b1e","医生":"6d7c1afb07","我头疼，想吃药。":"9a4f3de0b9","我不舒服，要看医生。":"a62321e600","去":"dfb9366c91","地铁":"9266202469","公交车":"70b46ee9e8","怎么":"786df56259","我坐地铁去上班。":"95fdac2345","你怎么去公司？":"d109dd53a7","在哪儿":"69a77dae44","左边":"a7eaff2960","右边":"128d58f066","一直走":"2c27b3b078","厕所在哪儿？":"572bcf2c9d","一直走，然后左转。":"678fe903c2","到":"d716f1e8a1","远":"6619176b57","近":"c68a31cb46","多久":"e07fbaedda","去机场要多久？":"f880e84964","不远，很近。":"3772d7b965","为什么":"cf9e991128","因为":"5f3cf4472e","怎么样":"dcc8446e1c","谁":"cfbafdf1d6","你为什么没来？":"6dc3f09b11","因为我很忙。":"a2da7a6665","没有":"b4ebe3f519","这里":"535ca5a5d8","那里":"a793c356f1","吗":"2988084a74","这里有水吗？":"93e2d6a544","没有，那里有。":"53e90076b9","帮":"5679e0e35b","借":"03a60113f9","等":"11ccee3ac8","马上":"f5abec1211","请帮我一下。":"d8430f4489","请等一下，我马上来。":"a86d2ed5ab","手机":"9f9d36327d","号码":"3eb7800dd4","微信":"cfbf6f4c82","打电话":"575345386c","你的手机号码是多少？":"ab05b0dcbd","我给你打电话。":"b00e9ac814","老板":"db3ac57de8","同事":"3a1ff305f3","公司":"41716f87c3","开会":"43f7edae16","我的同事在开会。":"957e0dc4d8","老板在公司吗？":"92f27fabd6","机器":"664b515d6c","坏了":"782bf02d4c","修":"5608f15385","师傅":"a9e0cbdda7","这台机器坏了。":"bf306bf194","师傅，请修一下。":"5ebc944dd4","停电":"c6c53a8195","开关":"a6beb974cc","安全":"fdbc77bd19","关":"d58a55bcee","停电了，先关机器。":"85a0d65b0b","注意安全！":"071e7ab13a","完":"68b6c8104e","快":"8fcedbfdde","检查":"4328677c29","问题":"5dc99f6efe","做完了吗？":"637e2633c0","有问题，我来检查。":"155b8ee146","请假":"11bc8a5a74","加班":"b64a217312","工资":"be11fc0449","同意":"e61f2cc4c3","我想请假一天。":"8ddd0368c6","今天晚上加班，你可以吗？":"7b1648a1df","新":"5a631c6c29","请多关照":"5b526e0af8","部门":"1e1459eeed","负责":"3715303dc9","我是新同事，请多关照。":"e1b212ca6c","我负责修机器。":"c8273ab21c","你好，我叫阿明，是新同事。":"e925d245bc","你好，很高兴认识你。你在哪个部门？":"b614dc46b6","我在机器部门，负责修机器。":"4e86ade616","好的，请多关照。":"ac24babb5a","中午":"259f542c09","一起":"3efffd5f35","食堂":"530237176d","请客":"538add1c8a","中午我们一起去食堂吧。":"7b7c171c14","今天我请客。":"6031be510a","中午吃什么？":"7d104a398e","我想吃饭，你呢？":"db8b6c3d66","我也想吃饭，一起去吧。":"b74ba4eac4","好，今天我请客。":"661791a6c3","螺丝":"fc174465d6","工具":"20dce2c6fa","一共":"af2bbb6237","买":"8be34d50fd","我要买螺丝和工具。":"8f56f58d2d","一共多少钱？":"41554a21e0","老板，这个多少钱？":"98fac2ca50","五块一个。":"f5a291a1dc","可以，四块吧。":"ed584fc2c4","喂":"367c9508e7","有空":"85b06f0156","下午":"e2eb289cc3","见":"b0deb10456","你明天下午有空吗？":"da63fc23d4","我们三点见。":"22716f3527","喂，你好！":"04942f9be5","你好，我是阿明。":"6bb29fc946","明天下午你有空吗？":"372685d6b1","有空，我们三点见。":"e738bfdb53","声音":"fb5fc98bcc","漏油":"7a3f6003d0","不能":"38f9286be2","别":"994f48ba91","机器有问题，声音很大。":"7a000c6115","这里漏油了。":"d9ec3cafff","师傅，机器坏了。":"88513d0bc8","怎么了？":"ec54a51dc2","声音很大，不能开。":"9379453369","别动，我马上来检查。":"c004575426","电线":"ed3c996c5b","插座":"72b0fac09e","断电":"8c57008873","小心":"1f5e5856ce","小心，先断电再修。":"8d6125afe0","这根电线坏了。":"caca54cafc","这里没有电。":"2741186b0f","先看开关。":"cb773d7428","开关没问题。":"7a05bdc4db","小心，可能是电线坏了。":"ce071c44a1","不好意思":"e81fdd38b6","麻烦":"d01ea71a33","辛苦了":"86a52bb54e","没问题":"2a7530b2b9","不好意思，麻烦你了。":"3947eaa8bb","辛苦了，明天见！":"b5ad181c8d","不好意思，麻烦你帮我一下。":"c80859c6f9","没问题，什么事？":"b84ac5faf2","请你教我用这台机器。":"c4eb7787e0","好的，我马上来。":"87be9e95cf","机票":"5829062758","护照":"74f7c68dae","行李":"e78a6c50d5","登机口":"76156fb146","这是我的护照。":"b86bab4494","登机口在哪儿？":"407572a5e4","请给我看护照。":"9000f7f835","在这里。":"c4731af535","行李有几个？":"0fdd48e32a","一个。":"632f8da703","酒店":"a48985ec8f","房间":"9bdfe95fda","住":"84f3602f49","订":"d99f001d9d","我订了一个房间。":"33f49688e4","我想住两天。":"7504cc905f","你好，我订了房间。":"d9ff7b97b1","请问您叫什么名字？":"a54117f9b7","我叫阿明。":"8bb148a3a2","好的，您住两天，对吗？":"6ae85af1c6","现金":"e7c0908c7b","刷卡":"c31eabb4ae","发票":"0030dfafcc","付":"5d52841be2","可以刷卡吗？":"fa1b97c5ea","我付现金，请给我发票。":"2e24ed627d","一共一百二十块。":"306a5c2c3c","可以。":"a54032e28c","请给我发票。":"c7435e27a4","换":"103512c679","退":"cf502bdc0a","错":"6160eb68dd","能不能":"c960330474","这个坏了，能不能换？":"ffbcff99af","你给错了。":"710ceedfa7","你好，这个坏了。":"4500bc8fc0","不好意思，我给你换一个。":"9c822d8606","谢谢，麻烦你了。":"ece2dc3c0d","不客气。":"9c4d773eef","最近":"046c6233e0","忙":"1c0a089e7a","还可以":"d02d8b6954","一般":"2ab01e418d","你最近忙吗？":"b32fa93ca0","还可以，不太忙。":"81dc64bb65","好久不见！最近怎么样？":"0886ae95e3","还可以，你呢？":"d944d2837b","我最近很忙。":"4913212939","注意休息。":"7d62feee60","打算":"19682b44b8","朋友":"9d53230a95","公园":"249bdde955","和":"ab20cc42f3","周末你打算做什么？":"d1b5137807","我想和朋友去公园。":"5138a4ee8d","我想和朋友去公园，你呢？":"1472f6a043","我想在家休息。":"808a1f3130","好，下周见。":"fc17840e90","不知道":"d5b347ba77","怎么说":"0084a1d713","听懂了":"7c26cfdf19","对吗":"1190cf1ca6","这个用中文怎么说？":"b85a870ff9","我听懂了，谢谢！":"0fe0658501","对不起，我没听懂。请再说一遍。":"4648ea6145","好的，我说慢一点。":"bf43647169","这是机器。":"4d95b8012f","帮忙":"e21730cbd8","救命":"9fe1951b42","警察":"e160a832cf","医院":"071bd02a36","请帮忙，我要去医院。":"b6002dbe07","有人受伤了，请叫医生！":"27914be38b","救命！这里有人受伤了！":"f2e13ebd71","别动，我打电话。":"0ba6dff082","请叫医生。":"433fe7b28b","医院很近，马上到。":"e49d0b8153","汇报":"8433df480a","完成":"769d88e425","计划":"0debf521ea","下周":"0a08e63307","今天的工作完成了。":"1e0e9af497","下周的计划是什么？":"534a781661","老板，今天的工作完成了。":"436ccc4382","辛苦了，机器检查了吗？":"b08249d997","检查了，没有问题。":"f8cc44170a","好，明天八点开会。":"023b738dae","妈":"11148107cd","麻":"4430d7daa7","马":"4e2572e0c7","骂":"aefa6b4338","你好，欢迎你。":"39ac72d7c5"};
 /* ===== NỘI DUNG 60 NGÀY =====
    it: "chữ Hán|pinyin|nghĩa"
    se: "từng/chữ/cách/nhau|pinyin/từng/chữ|nghĩa"  (dùng để bấm sắp xếp câu)
@@ -698,7 +760,7 @@ function tokInfo(it,i){var z=it.zt[i].replace(/[，。？！、…\s]/g,''),d=DI
 /* ---------- lưu trữ ---------- */
 var storageOK=true;
 function defState(){return {v:1,start:today(),time:'19:30',done:{},srs:{},log:[],tests:{},speak:{},recent:[],consol:false,lastDone:'',sess:null,
-  set:{hanzi:true,pinyin:true,vi:true,fade:true,track:'life'}}}
+  set:{hanzi:true,pinyin:true,vi:true,fade:true,sfx:true,track:'life'}}}
 function load(){
   var s=defState();
   try{var r=localStorage.getItem(KEY);if(r){var o=JSON.parse(r);for(var k in o){if(k==='set'){for(var j in o.set)s.set[j]=o.set[j]}else s[k]=o[k]}}}
@@ -760,22 +822,40 @@ function loadVoices(){
 loadVoices();
 if(window.speechSynthesis){try{speechSynthesis.onvoiceschanged=function(){loadVoices();if(!S&&UI.tab==='settings')render()}}catch(e){}}
 try{if(window.claude&&claude.use){claude.use('tts').then(function(t){ttsCap=t||null}).catch(function(){})}}catch(e){}
-function hasVoice(){return !!(zhVoice||ttsCap)}
+/* Âm thanh: ưu tiên file mp3 đọc sẵn (có cho mọi từ và câu trong bài), giọng của thiết bị chỉ là dự phòng */
+var AP=null;
 function clean(t){return String(t).replace(/[…·]/g,'')}
+function audioURL(t){try{var k=AUDIO[clean(t).trim()];return k?'audio/'+k+'.mp3':null}catch(e){return null}}
+function hasVoice(){return true}
+function deviceSpeak(text,slow,fin,est){
+  if(window.speechSynthesis&&window.SpeechSynthesisUtterance){try{
+    if(!zhVoice)loadVoices();speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(text);u.lang='zh-CN';if(zhVoice)u.voice=zhVoice;u.rate=slow?0.6:0.9;u.onend=fin;u.onerror=fin;
+    speechSynthesis.speak(u);setTimeout(fin,est+3000);return true}catch(e){}}
+  if(ttsCap){try{ttsCap.speak(text,{language:'zh-CN',rate:slow?0.7:1}).then(fin,fin);setTimeout(fin,est+6000);return true}catch(e){}}
+  return false;
+}
 function speakP(text,slow){
   text=clean(text);
   return new Promise(function(res){
     var done=false;function fin(){if(!done){done=true;res()}}
     var est=Math.max(1200,text.length*(slow?650:420)+800);
-    if(zhVoice){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(text);u.lang=zhVoice.lang||'zh-CN';u.voice=zhVoice;u.rate=slow?0.55:0.9;u.onend=fin;u.onerror=fin;speechSynthesis.speak(u);setTimeout(fin,est+3000);return}catch(e){}}
-    if(ttsCap){ttsCap.speak(text,{language:'zh-CN',rate:slow?0.7:1}).then(fin,fin);setTimeout(fin,est+6000);return}
-    setTimeout(fin,est);
+    var url=audioURL(text);
+    if(url){try{
+      if(!AP){AP=new Audio();AP.preload='auto';AP.setAttribute('playsinline','')}
+      try{if(window.speechSynthesis)speechSynthesis.cancel()}catch(e){}
+      AP.pause();AP.onended=fin;
+      AP.onerror=function(){if(!deviceSpeak(text,slow,fin,est)){toast('Không phát được âm thanh. Kiểm tra kết nối mạng và âm lượng.');fin()}};
+      AP.src=url;AP.defaultPlaybackRate=slow?0.7:1;AP.playbackRate=slow?0.7:1;
+      try{AP.preservesPitch=true;AP.webkitPreservesPitch=true}catch(e){}
+      var p=AP.play();
+      if(p&&p.catch)p.catch(function(err){if(err&&err.name==='NotAllowedError'){fin();return}if(!deviceSpeak(text,slow,fin,est))fin()});
+      setTimeout(fin,est+5000);return;
+    }catch(e){}}
+    if(!deviceSpeak(text,slow,fin,est)){toast('Thiết bị chưa phát được giọng tiếng Trung cho câu này.');setTimeout(fin,est)}
   });
 }
-function say(text,slow){
-  if(!hasVoice()){toast('Thiết bị chưa có giọng tiếng Trung. Mở Cài đặt để xem cách bật.');return}
-  speakP(text,slow);
-}
+function say(text,slow){speakP(text,slow)}
 var toastT;
 function toast(m){var o=$('toast');if(!o){o=document.createElement('div');o.id='toast';o.className='toast';o.setAttribute('role','status');document.body.appendChild(o)}o.textContent=m;o.hidden=false;clearTimeout(toastT);toastT=setTimeout(function(){o.hidden=true},3800)}
 
@@ -867,13 +947,13 @@ var S=null;
 var exitAsk=false;
 var Clip={on:false,idx:-1,gen:0,lines:[]};
 var ROUTES=['today','plan','review','progress','settings','post'];
-function go(tab,day){clipStop();S=null;exitAsk=false;recReset();UI.tab=tab;UI.day=day||null;try{history.replaceState(null,'','#'+tab)}catch(e){}render()}
+function go(tab,day){clipStop();S=null;G=null;clearTimeout(QT);exitAsk=false;recReset();UI.tab=tab;UI.day=day||null;try{history.replaceState(null,'','#'+tab)}catch(e){}render()}
 var lastKey='';
 function render(){
-  var html=S?sessionHTML():screenHTML();
-  var key=S?('s'+S.mode+S.si+'.'+(S.ci||0)+'.'+(S.li||0)+'.'+(S.qi||0)+'.'+(S.pi||0)):UI.tab+(UI.day||'');
+  var html=G?gameHTML():S?sessionHTML():screenHTML();
+  var key=G?('g'+G.k+(G.i||0)+(G.done?'d':'')+(G.started?'s':'')):S?('s'+S.mode+S.si+'.'+(S.ci||0)+'.'+(S.li||0)+'.'+(S.qi||0)+'.'+(S.pi||0)):UI.tab+(UI.day||'');
   var y=window.scrollY;
-  $('app').innerHTML=html+(S?'':tabbar());
+  $('app').innerHTML=html+((S||G)?'':tabbar());
   if(S&&step()!=='result'){st.sess=S;save()}
   if(key!==lastKey){window.scrollTo(0,0);lastKey=key}else window.scrollTo(0,y);
 }
@@ -889,7 +969,7 @@ function tabbar(){
   var due=dueIds().length;
   return '<nav class="tabbar" aria-label="Điều hướng"><div class="in">'+tabs.map(function(t){return '<button class="tab" '+(c===t[0]?'aria-current="page"':'')+' onclick="A.go(\''+t[0]+'\')">'+TABI[t[0]]+t[1]+(t[0]==='review'&&due?' ('+due+')':'')+'</button>'}).join('')+'</div></nav>';
 }
-function topbar(){return '<div class="topbar"><span class="brand">Học Tiếng Trung</span><button class="link" onclick="A.go(\'settings\')">Cài đặt và sao lưu</button></div>'}
+function topbar(){return '<div class="topbar"><span class="brand"><span class="seal">中</span>Học Tiếng Trung</span><button class="link" onclick="A.go(\'settings\')">Cài đặt và sao lưu</button></div>'}
 function screenHTML(){
   var h='';
   if(!storageOK)h+='<div class="card warn" style="margin-bottom:14px"><b>Trình duyệt đang chặn lưu dữ liệu.</b><p class="small">Tiến độ sẽ mất khi tải lại trang. Hãy dùng mục Cài đặt để xuất bản sao lưu sau mỗi buổi, hoặc mở bằng trình duyệt thường (không ở chế độ riêng tư).</p></div>';
@@ -907,7 +987,8 @@ function screenHTML(){
 /* ---------- màn HÔM NAY ---------- */
 var STEPN={due:'Ôn nhanh bài đến hạn',look:'Nhìn tình huống',video:'Xem video',hear:'Nghe và hiểu',pic:'Chọn hình đúng',speak:'Luyện nói',talk:'Dùng trong hội thoại',test:'Kiểm tra',recall:'Tự nhớ',result:'Kết quả'};
 function todayHTML(){
-  var nd=nextDay(),b=backlog(),h='<div class="stack">'+topbar();
+  var nd=nextDay(),b=backlog(),sk=streak(),h='<div class="stack">'+topbar();
+  h+='<div class="statbar"><span class="stat fire">'+FLAME+'<span><b class="num">'+sk+'</b><small>ngày liên tiếp</small></span></span><span class="stat xp">'+STAR+'<span><b class="num">'+(st.xp||0)+'</b><small>điểm từ câu đúng</small></span></span></div>';
   var last='';for(var k in st.done){last=maxStr(last,st.done[k].date)}
   st.log.forEach(function(l){last=maxStr(last,l.date)});
   var ss=st.sess;
@@ -925,6 +1006,7 @@ function todayHTML(){
     h+='</div>';
   }
   h+='<div class="card"><div class="row sp"><div style="flex:1;min-width:0"><h3>Hôm nay tôi bận</h3><p class="muted small">Chỉ ôn mục quan trọng và luyện nói một câu. Khoảng 5 đến 10 phút. Không tính là xong ngày học.</p></div></div><button class="btn sec" onclick="A.start(\'busy\')">Tôi chỉ có 5 phút</button></div>';
+  h+=gamesCard('Chơi mà học');
   h+='<button class="card" style="text-align:left;font:inherit;color:var(--ink);cursor:pointer" onclick="A.go(\'review\')"><div class="row sp"><div><div class="eyebrow">Ôn tập</div><b style="font-size:1.15rem">'+(b.n?b.n+' mục cần ôn':'Chưa có mục nào đến hạn')+'</b></div><span class="chip '+(b.n?'due':'done')+'">'+(b.n?'Ôn ngay':'Ổn')+'</span></div></button>';
   var sid=sentenceOfDay();
   if(sid){var it=ITEMS[sid];h+='<div class="card"><div class="eyebrow">Một câu có thể dùng ngay</div><div>'+fHz(it.zh,'s')+'</div><div>'+fPy(it.py)+'</div><div>'+fVi(it.vi)+'</div>'+playBtns(sid)+'</div>'}
@@ -1017,10 +1099,11 @@ function dayHTML(d){
 function reviewHTML(){
   var due=dueIds(),w=weakIds(),h='<div class="stack">'+topbar()+'<div><h1>Ôn tập</h1><p class="muted">Mục đến hạn được xếp theo khoảng cách 1, 3, 7, 14 và 30 ngày. Mục bạn hay quên sẽ quay lại sớm hơn.</p></div>';
   var total=0;for(var k in st.srs)if(ITEMS[k])total++;
-  if(!total){return h+'<div class="card"><p>Chưa có mục nào để ôn. Hoàn thành phần «Nghe và hiểu» của ngày 1 để bắt đầu.</p><button class="btn" onclick="A.go(\'today\')">Về màn Hôm nay</button></div></div>'}
+  if(!total){return h+gamesCard()+'<div class="card"><p>Chưa có mục nào để ôn. Hoàn thành phần «Nghe và hiểu» của ngày 1 để bắt đầu.</p><button class="btn" onclick="A.go(\'today\')">Về màn Hôm nay</button></div></div>'}
   h+='<div class="card hero"><div class="eyebrow">Hôm nay</div><div class="big num">'+due.length+' mục cần ôn</div>';
   h+=due.length?'<p class="muted small">Mỗi lượt tối đa 15 mục để vừa sức. Nghe hoặc nhớ nghĩa trước, rồi tự đánh giá.</p><button class="btn" onclick="A.start(\'review\')">Ôn ngay</button>':'<p class="muted">Chưa có mục nào đến hạn. Bạn có thể ôn thêm mục hay quên bên dưới.</p>';
   h+='</div>';
+  h+=gamesCard();
   h+='<div class="card"><div class="row sp"><div><h3>Mục hay quên</h3><p class="muted small">'+w.length+' mục</p></div></div>'+(w.length?'<button class="btn sec" onclick="A.start(\'consol\')">Ôn mục hay quên</button>':'<p class="muted small">Chưa có mục nào bị đánh dấu hay quên.</p>')+'</div>';
   var t=today(),cols=[],mx=1;
   for(var i=0;i<7;i++){var ds=addDays(t,i),c=0;for(var id in st.srs){if(!ITEMS[id])continue;var e=st.srs[id];if(i===0?e.due<=ds:e.due===ds)c++}cols.push({d:ds,c:c});if(c>mx)mx=c}
@@ -1087,11 +1170,7 @@ function settingsHTML(){
   h+='<div class="card"><h3>Hiện gợi ý</h3><p class="muted small">Chữ Hán, pinyin và nghĩa tiếng Việt bật tắt riêng. Phần bị tắt hiện thành ô mờ, bấm vào để xem. Nên giảm dần khi bạn đã quen.</p>'+
    tg('hanzi','Chữ Hán')+tg('pinyin','Pinyin (cách đọc)')+tg('vi','Nghĩa tiếng Việt')+tg('fade','Tự giảm gợi ý với mục đã nhớ (chỉ nghe, chưa hiện chữ)')+'</div>';
   loadVoices();
-  h+='<div class="card"><h3>Âm thanh tiếng Trung</h3>';
-  if(zhVoice)h+='<p>Thiết bị có giọng tiếng Trung: <b>'+esc(zhVoice.name)+'</b>.</p><button class="btn sm sec" onclick="A.sayT(null,0,\'你好，欢迎你。\')">Thử nghe</button>';
-  else if(ttsCap)h+='<p>Thiết bị chưa có giọng tiếng Trung riêng, đang dùng giọng đọc của nền tảng.</p><button class="btn sm sec" onclick="A.sayT(null,0,\'你好，欢迎你。\')">Thử nghe</button>';
-  else h+='<p><b>Thiết bị chưa có giọng tiếng Trung.</b></p><ul class="plain small"><li>Windows: Cài đặt → Thời gian và ngôn ngữ → Ngôn ngữ → thêm Chinese (Simplified), bật Speech.</li><li>Android: Cài đặt → Quản lý chung → Chuyển văn bản thành giọng nói → Google → tải giọng Trung.</li><li>iPhone, iPad: Cài đặt → Trợ năng → Nội dung được đọc → Giọng nói → Tiếng Trung.</li><li>Hoặc mở trang này bằng Chrome hoặc Edge trên máy tính.</li></ul><p class="muted small">Khi chưa nghe được, hãy dùng pinyin và nghĩa. Nghe là phần quan trọng, nên nên cài giọng sớm.</p>';
-  h+='</div>';
+  h+='<div class="card"><h3>Âm thanh tiếng Trung</h3><p class="small">Mọi từ, câu và lời thoại trong 60 bài đều có <b>file âm thanh đọc sẵn</b>, nên nghe được trên mọi điện thoại, không cần cài giọng. Đây là giọng máy (Kokoro, giấy phép Apache 2.0), không phải ghi âm người bản ngữ. Em đã cho máy nhận dạng giọng nói nghe lại từng file để kiểm tra đọc đúng chữ; nên nghe thêm video bài giảng để quen giọng người thật.</p><p class="muted small">Nếu bấm Nghe mà không có tiếng: tăng âm lượng, tắt chế độ im lặng (iPhone: gạt nút bên hông), và kiểm tra có mạng.</p><div class="row"><button class="btn sm" onclick="A.sayT(null,0,\'你好，欢迎你。\')">Thử nghe</button><button class="btn sm sec" onclick="A.sayT(null,1,\'你好，欢迎你。\')">Thử nghe chậm</button></div>'+tg('sfx','Âm báo đúng / sai khi làm bài')+'</div>';
   h+='<div class="card"><h3>Dữ liệu của bạn lưu ở đâu</h3><p class="small">Tiến độ lưu trong <b>trình duyệt trên thiết bị này</b> (bộ nhớ cục bộ của trang). Tải lại trang vẫn còn, kể cả bài đang học dở. <b>Chưa đồng bộ giữa các thiết bị.</b> Xóa dữ liệu duyệt web hoặc dùng chế độ riêng tư có thể làm mất. Muốn đổi máy, hãy xuất bản sao lưu rồi nhập ở máy mới.</p>'+
    '<div class="row"><button class="btn sm" onclick="A.exportData()">Xuất bản sao lưu</button><button class="btn sm sec" onclick="A.copyData()">Sao chép bản sao lưu</button></div>'+
    '<label class="small">Nhập từ file sao lưu<br><input type="file" id="impFile" accept=".json,.txt,application/json,text/plain" onchange="A.importFile(this)"></label>'+
@@ -1450,8 +1529,211 @@ function curQ(){return qlist()[S.qi]}
 function autoPlay(){var q=S&&qlist&&(['pic','talk','test'].indexOf(step())>=0)?curQ():null;if(q&&(q.type==='listen'||q.type==='pic'||q.type==='scene')&&hasVoice()){setTimeout(function(){speakP(ITEMS[q.id].zh)},200)}}
 function recordQ(q,ok){
   var key=qkey();if(S.res[key])return;
-  S.res[key]={id:q.id,ok:ok,t:q.type};quizMark(q.id,ok);save();
+  S.res[key]={id:q.id,ok:ok,t:q.type};quizMark(q.id,ok);if(ok)addXP(10);sfx(ok?'ok':'bad');save();
 }
+/* ---------- hiệu ứng âm thanh ngắn (đúng / sai) ---------- */
+var SFX=null;
+function sfx(kind){
+  if(st.set.sfx===false)return;
+  try{
+    if(!SFX){var C=window.AudioContext||window.webkitAudioContext;if(!C)return;SFX=new C()}
+    if(SFX.state==='suspended')SFX.resume();
+    var notes=kind==='ok'?[660,880]:kind==='win'?[523,659,784,1046]:[220,180];
+    notes.forEach(function(f,i){
+      var o=SFX.createOscillator(),g=SFX.createGain(),t=SFX.currentTime+i*0.09;
+      o.type=kind==='bad'?'triangle':'sine';o.frequency.value=f;
+      g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.18,t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+0.22);
+      o.connect(g);g.connect(SFX.destination);o.start(t);o.stop(t+0.25);
+    });
+  }catch(e){}
+}
+function confetti(){
+  var box=document.createElement('div');box.className='confetti';box.setAttribute('aria-hidden','true');
+  var cols=['#e0453a','#f2b632','#0d7a68','#3b82c4','#e86fa3'];
+  for(var i=0;i<46;i++){var s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.background=cols[i%cols.length];s.style.animationDelay=(Math.random()*0.5)+'s';s.style.transform='rotate('+Math.round(Math.random()*360)+'deg)';box.appendChild(s)}
+  document.body.appendChild(box);setTimeout(function(){box.remove()},2600);
+}
+
+/* ---------- điểm và chuỗi ngày (chỉ tính từ việc học thật) ---------- */
+function addXP(n){st.xp=(st.xp||0)+n}
+function markPlay(){st.play=st.play||[];var t=today();if(st.play.indexOf(t)<0){st.play.push(t);if(st.play.length>400)st.play.shift()}}
+function streak(){
+  var ds={};(st.play||[]).forEach(function(d){ds[d]=1});st.log.forEach(function(l){ds[l.date]=1});
+  var n=0,d=today();if(!ds[d])d=addDays(d,-1);
+  while(ds[d]){n++;d=addDays(d,-1)}
+  return n;
+}
+var FLAME='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 11a5 5 0 0 1-10 0c0-2.5 1.2-4 2.5-5 .2 1.8 1 2.8 2 3.2C11 8.5 11 5 12 2z" fill="#f2752b"/><path d="M12 13c.6 1.6 2.4 2.2 2.4 4.3a2.4 2.4 0 0 1-4.8 0c0-1.3.7-2 1.3-2.5.2.9.6 1.3 1.1 1.4-.3-1.1-.3-2.2 0-3.2z" fill="#f9c440"/></svg>';
+var STAR='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" fill="currentColor"/></svg>';
+
+/* ---------- kho từ cho trò chơi: chỉ lấy bài đã học (hoặc bài hôm nay nếu chưa học gì) ---------- */
+function gamePool(kind){
+  var nd=Math.min(nextDay(),60),ids=[];
+  for(var d=1;d<=60;d++){
+    if(!(st.done[d]||d===nd))continue;var D=dayOf(d);if(!D.ids)continue;
+    D.ids.forEach(function(id){var it=ITEMS[id];if(kind==='w'&&it.k!=='w')return;if(kind==='tone'&&(it.k!=='w'||!/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(it.py)||/[不一]/.test(it.zh)||/[ \/]/.test(it.zh)))return;ids.push(id)});
+  }
+  if(ids.length<6){for(var d2=1;d2<=60&&ids.length<12;d2++){var D2=dayOf(d2);if(!D2.ids)continue;D2.ids.forEach(function(id){var it=ITEMS[id];if(ids.indexOf(id)>=0)return;if(kind==='w'&&it.k!=='w')return;if(kind==='tone'&&(it.k!=='w'||!/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(it.py)||/[不一]/.test(it.zh)||/[ \/]/.test(it.zh)))return;ids.push(id)})}}
+  var seenVi={},out=[];shuffle(ids).forEach(function(id){var v=ITEMS[id].vi;if(!seenVi[v]){seenVi[v]=1;out.push(id)}});
+  /* ưu tiên mục hay quên */
+  out.sort(function(a,b){var ea=st.srs[a],eb=st.srs[b];return ((eb&&eb.lapses)||0)-((ea&&ea.lapses)||0)});
+  return out;
+}
+
+/* ---------- đổi thanh điệu để làm đáp án nhiễu ---------- */
+var TONES={a:'āáǎà',e:'ēéěè',i:'īíǐì',o:'ōóǒò',u:'ūúǔù','ü':'ǖǘǚǜ'};
+function toneVariant(py){
+  var out='',changed=false;
+  for(var i=0;i<py.length;i++){
+    var c=py[i],done=false;
+    for(var b in TONES){var k=TONES[b].indexOf(c);if(k>=0){var nk=Math.floor(Math.random()*4);if(nk!==k)changed=true;out+=TONES[b][nk];done=true;break}}
+    if(!done)out+=c;
+  }
+  return changed?out:null;
+}
+function toneSeq(py){var t=[];for(var i=0;i<py.length;i++){for(var b in TONES){var k=TONES[b].indexOf(py[i]);if(k>=0)t.push(k+1)}}return t.join('')}
+/* cách đọc thực tế khi hai thanh 3 đứng liền: thanh 3 trước đọc thành thanh 2 (nǐ hǎo nghe như ní hǎo) */
+function sandhiSeq(seq){var a=seq.split('');for(var i=0;i<a.length-1;i++){if(a[i]==='3'&&a[i+1]==='3')a[i]='2'}return a.join('')}
+function toneOpts(py){
+  var s=[py],tries=0,real=sandhiSeq(toneSeq(py));
+  while(s.length<4&&tries<80){tries++;var v=toneVariant(py);if(v&&s.indexOf(v)<0&&toneSeq(v)!==real)s.push(v)}
+  return shuffle(s);
+}
+
+/* ---------- trạng thái trò chơi ---------- */
+var G=null;
+var GAMES={
+  match:{name:'Ghép đôi',desc:'Lật thẻ, ghép chữ Hán với nghĩa. Càng ít lần sai càng nhiều sao.',color:'g1'},
+  quick:{name:'Nghe nhanh',desc:'Nghe và chọn nghĩa đúng trước khi hết giờ. Đúng liên tiếp được nhân điểm.',color:'g2'},
+  tone:{name:'Bắt thanh điệu',desc:'Nghe một từ, chọn cách đọc đúng thanh điệu.',color:'g3'}
+};
+var GICON={
+  match:'<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="18" height="26" rx="4" fill="#fff" opacity=".95" transform="rotate(-8 15 22)"/><rect x="24" y="12" width="18" height="26" rx="4" fill="#fff" transform="rotate(8 33 25)"/><text x="12" y="28" font-size="12" font-family="Noto Sans SC" fill="#c2412d" transform="rotate(-8 15 22)">水</text><text x="27" y="30" font-size="8" font-weight="700" fill="#c2412d" transform="rotate(8 33 25)">nước</text></svg>',
+  quick:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="26" r="15" fill="#fff"/><path d="M24 26V16" stroke="#1d5fa8" stroke-width="3" stroke-linecap="round"/><path d="M24 26l7 4" stroke="#1d5fa8" stroke-width="3" stroke-linecap="round"/><rect x="20" y="6" width="8" height="5" rx="2" fill="#fff"/><path d="M38 12l4-4M8 16l-3-3" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>',
+  tone:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 12h10" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M18 36l10-14" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M30 18q4 16 8 4" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M40 10l4 16" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/></svg>'
+};
+function gamesCard(title){
+  var b=st.games||{};
+  return '<div class="card gamescard"><div class="row sp"><h3>'+(title||'Trò chơi luyện nhanh')+'</h3><span class="muted small">Dùng từ bạn đã học</span></div><div class="gametiles">'+
+    Object.keys(GAMES).map(function(k){var g=GAMES[k],best=b[k]&&b[k].best;return '<button class="gtile '+g.color+'" onclick="A.game(\''+k+'\')">'+GICON[k]+'<b>'+g.name+'</b><span>'+(best?'Kỷ lục '+best+(k==='match'?' sao':k==='tone'?' câu đúng':' điểm'):'Chơi thử')+'</span></button>'}).join('')+
+  '</div></div>';
+}
+function startGame(k){
+  clipStop();recReset();
+  if(k==='match'){
+    var ids=gamePool('w').filter(function(id){return ITEMS[id].zh.length<=4&&ITEMS[id].vi.length<=22}).slice(0,6);
+    if(ids.length<4)ids=gamePool('w').slice(0,6);
+    var cards=[];ids.forEach(function(id){cards.push({id:id,s:'z'});cards.push({id:id,s:'v'})});
+    G={k:k,cards:shuffle(cards),open:[],got:{},miss:0,t0:Date.now(),done:false,lock:false};
+  }else if(k==='quick'){
+    var pool=gamePool(null).filter(function(id){return ITEMS[id].k!=='l'});
+    var qs=pool.slice(0,10).map(function(id){var o=distract(id,3);o.push(ITEMS[id].vi);return {id:id,opts:shuffle(o)}});
+    G={k:k,qs:qs,i:0,score:0,combo:0,right:0,ans:null,started:false,done:false};
+  }else{
+    var tp=gamePool('tone').slice(0,8);
+    G={k:k,qs:tp.map(function(id){return {id:id,opts:toneOpts(ITEMS[id].py)}}).filter(function(q){return q.opts.length>=2}),i:0,right:0,ans:null,done:false,started:false};
+  }
+  markPlay();save();render();
+}
+var QT=null;
+function quickTimer(){
+  clearTimeout(QT);if(!G||G.k!=='quick'||G.done||G.ans!==null)return;
+  G.tq=Date.now();
+  QT=setTimeout(function(){if(G&&G.k==='quick'&&G.ans===null){quickAnswer(-1)}},10000);
+}
+function quickAnswer(i){
+  var q=G.qs[G.i];if(G.ans!==null)return;clearTimeout(QT);
+  var ok=i>=0&&q.opts[i]===ITEMS[q.id].vi,left=Math.max(0,10-(Date.now()-G.tq)/1000);
+  G.ans=i;G.ok=ok;
+  if(ok){G.combo++;G.right++;var pts=Math.round((50+left*5)*Math.min(3,1+Math.floor(G.combo/3)*0.5));G.score+=pts;G.last=pts;addXP(10);sfx('ok');pushRecent(1)}
+  else{G.combo=0;G.last=0;quizMark(q.id,false);sfx('bad')}
+  save();render();
+}
+function gameEnd(){
+  G.done=true;st.games=st.games||{};var r=st.games[G.k]||{plays:0};r.plays++;
+  var val=G.k==='match'?G.stars:G.k==='quick'?G.score:G.right;
+  var better=!r.best||val>r.best;if(better)r.best=val;st.games[G.k]=r;G.newBest=better&&r.plays>1;
+  save();
+  if((G.k==='match'&&G.stars>=2)||(G.k!=='match'&&G.right>=Math.ceil((G.qs||[]).length*0.7))){sfx('win');setTimeout(confetti,60)}
+}
+function gameTop(title,progress){
+  return '<div class="row sp"><button class="btn sm sec" onclick="A.gameQuit()">Thoát</button><span class="gtitle">'+title+'</span><span class="chip xp num">'+STAR+(st.xp||0)+'</span></div>'+(progress!==undefined?'<div class="bar"><i style="width:'+progress+'%"></i></div>':'');
+}
+function gameHTML(){
+  var h='<div class="stack game">';
+  if(G.k==='match'){
+    var n=G.cards.length/2,got=Object.keys(G.got).length;
+    h+=gameTop('Ghép đôi',got/n*100);
+    if(G.done){return h+endBox('Ghép xong '+n+' cặp','Sai '+G.miss+' lần · '+G.secs+' giây',G.stars,3)+'</div>'}
+    h+='<p class="muted small">Chạm 2 thẻ: một chữ Hán và nghĩa của nó. Ghép đúng sẽ nghe đọc từ đó.</p><div class="mgrid">';
+    G.cards.forEach(function(c,i){
+      var it=ITEMS[c.id],isOpen=G.open.indexOf(i)>=0,got=G.got[c.id];
+      var cls='mcard'+(got?' got':'')+(isOpen?' open':'')+(G.wrong&&G.wrong.indexOf(i)>=0?' wrong':'');
+      var inner=c.s==='z'?'<span class="hz s">'+esc(it.zh)+'</span><span class="py">'+esc(it.py)+'</span>':'<span class="vi">'+esc(it.vi)+'</span>';
+      h+='<button class="'+cls+'" '+(got?'disabled':'')+' onclick="A.mflip('+i+')">'+inner+'</button>';
+    });
+    return h+'</div></div>';
+  }
+  var qs=G.qs,q=qs[G.i];
+  if(!qs.length)return h+gameTop(GAMES[G.k].name)+'<div class="card"><p>Chưa đủ từ để chơi. Học thêm một bài rồi quay lại nhé.</p><button class="btn" onclick="A.gameQuit()">Quay lại</button></div></div>';
+  if(G.done){
+    if(G.k==='quick')return h+gameTop('Nghe nhanh',100)+endBox(G.score+' điểm','Đúng '+G.right+' / '+qs.length+' câu',G.right>=qs.length*0.9?3:G.right>=qs.length*0.6?2:1,3)+'</div>';
+    return h+gameTop('Bắt thanh điệu',100)+endBox('Đúng '+G.right+' / '+qs.length,'Thanh điệu là phần khó nhất với người mới, cứ chơi lại vài lần.',G.right>=qs.length*0.9?3:G.right>=qs.length*0.6?2:1,3)+'</div>';
+  }
+  var it=ITEMS[q.id];
+  h+=gameTop(GAMES[G.k].name,G.i/qs.length*100);
+  if(!G.started){
+    return h+'<div class="card gintro '+GAMES[G.k].color+'">'+GICON[G.k]+'<h2>'+GAMES[G.k].name+'</h2><p>'+GAMES[G.k].desc+'</p><p class="small">'+qs.length+' câu · bật âm lượng điện thoại</p><button class="btn big" onclick="A.gstart()">Bắt đầu</button></div></div>';
+  }
+  h+='<div class="row sp"><span class="muted small num">Câu '+(G.i+1)+' / '+qs.length+'</span>'+(G.k==='quick'?'<span class="chip num">'+G.score+' điểm'+(G.combo>=3?' · chuỗi '+G.combo:'')+'</span>':'<span class="chip num">Đúng '+G.right+'</span>')+'</div>';
+  if(G.k==='quick'&&G.ans===null)h+='<div class="timer"><i></i></div>';
+  h+='<div class="card hero gq"><button class="listenbig" onclick="A.say(\''+q.id+'\')" aria-label="Nghe lại">'+SPK+'<span>Nghe lại</span></button>';
+  if(G.k==='tone')h+='<p class="muted small">Nghĩa: '+esc(it.vi)+'. Chọn cách đọc đúng thanh điệu:</p>';
+  else h+='<p class="muted small">Chọn nghĩa đúng:</p>';
+  h+='<div class="opts">'+q.opts.map(function(o,i){
+    var right=G.k==='tone'?o===it.py:o===it.vi,cls='opt';
+    if(G.ans!==null){if(right)cls+=' ok';else if(i===G.ans)cls+=' no'}
+    return '<button class="'+cls+'" '+(G.ans!==null?'disabled':'')+' onclick="A.gans('+i+')">'+(G.k==='tone'?'<span class="py big">'+esc(o)+'</span>':esc(o))+'</button>'}).join('')+'</div>';
+  if(G.ans!==null){
+    h+='<div class="fb '+(G.ok?'good':'bad')+'"><b>'+(G.ok?(G.k==='quick'?'Đúng! +'+G.last+' điểm':'Đúng!'):(G.ans<0?'Hết giờ.':'Chưa đúng.'))+'</b> <span class="hz s">'+esc(it.zh)+'</span> <span class="py">'+esc(it.py)+'</span> · '+esc(it.vi)+'</div>';
+    h+='<button class="btn" onclick="A.gnext()">'+(G.i+1>=qs.length?'Xem kết quả':'Câu tiếp')+'</button>';
+  }
+  return h+'</div></div>';
+}
+function endBox(big,sub,stars,max){
+  var s='';for(var i=0;i<max;i++)s+='<span class="st'+(i<stars?' on':'')+'">'+STAR+'</span>';
+  return '<div class="card endbox"><div class="stars">'+s+'</div><div class="big num">'+big+'</div><p class="muted">'+sub+'</p>'+(G.newBest?'<p class="chip test">Kỷ lục mới</p>':'')+'<button class="btn" onclick="A.game(\''+G.k+'\')">Chơi lại</button><button class="btn sec" onclick="A.gameQuit()">Xong</button></div>';
+}
+var SPK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
+var GAMEA={
+  game:function(k){startGame(k)},
+  gameQuit:function(){clearTimeout(QT);G=null;render()},
+  gstart:function(){G.started=true;render();var q=G.qs[G.i];if(q)say(ITEMS[q.id].zh);quickTimer()},
+  gans:function(i){
+    if(G.k==='quick'){quickAnswer(i);return}
+    var q=G.qs[G.i];if(G.ans!==null)return;var ok=q.opts[i]===ITEMS[q.id].py;G.ans=i;G.ok=ok;
+    if(ok){G.right++;addXP(10);sfx('ok');pushRecent(1)}else{quizMark(q.id,false);sfx('bad')}
+    save();render();
+  },
+  gnext:function(){
+    G.i++;G.ans=null;
+    if(G.i>=G.qs.length){gameEnd();render();return}
+    render();var q=G.qs[G.i];say(ITEMS[q.id].zh);quickTimer();
+  },
+  mflip:function(i){
+    if(G.lock||G.done)return;var c=G.cards[i];if(G.got[c.id]||G.open.indexOf(i)>=0)return;
+    G.wrong=null;G.open.push(i);
+    if(c.s==='z')say(ITEMS[c.id].zh);
+    if(G.open.length===2){
+      var a=G.cards[G.open[0]],b=G.cards[G.open[1]];
+      if(a.id===b.id&&a.s!==b.s){G.got[a.id]=1;G.open=[];addXP(5);sfx('ok');if(c.s!=='z')say(ITEMS[c.id].zh);
+        if(Object.keys(G.got).length*2===G.cards.length){G.secs=Math.round((Date.now()-G.t0)/1000);G.stars=G.miss<=1?3:G.miss<=4?2:1;gameEnd()}}
+      else{G.miss++;G.wrong=G.open.slice();G.lock=true;sfx('bad');var o=G.open;setTimeout(function(){if(!G)return;G.open=[];G.wrong=null;G.lock=false;render()},850)}
+    }
+    render();
+  }
+};
+
 var A={
   go:go,
   recFile:function(inp){var f=inp.files&&inp.files[0];if(!f)return;try{if(Rec.url)URL.revokeObjectURL(Rec.url)}catch(e){}Rec.url=URL.createObjectURL(f);Rec.state='ready';Rec.msg='';render()},
@@ -1547,6 +1829,7 @@ function doImport(txt){
     s.sess=null;st=s;save();toast('Đã nhập bản sao lưu.');go('today');
   }catch(e){if(m)m.textContent='Nội dung không phải bản sao lưu hợp lệ của ứng dụng này.'}
 }
+for(var gk in GAMEA)A[gk]=GAMEA[gk];
 window.A=A;
 
 /* khởi động */
